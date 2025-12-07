@@ -630,113 +630,71 @@
     }
 
     /* ========== TEAM SECTION ========== */
-   .team-grid {
-  display: grid;
-  gap: 1.75rem;
-}
+    .team {
+      background-color: #ffffff;
+    }
 
-.team-grid.core,
-.team-grid.operators,
-.team-grid.team-specialists-wrapper {
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-}
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
 
-.team-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column; /* ensures equal height with footer stuck to bottom */
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  cursor: default;
-}
+    .team-card {
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid #e5e7eb;
+      background: linear-gradient(to bottom right, #f9fafb, #eff6ff);
+      transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+    }
 
-.team-card.green {
-  border-top: 3px solid #3b9c5c;
-}
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+    }
 
-.team-card.purple {
-  border-top: 3px solid #6b4ad4;
-}
+    .team-card.green {
+      background: linear-gradient(to bottom right, #f0fdf4, #dcfce7);
+    }
 
-.team-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
-  border-color: rgba(0, 0, 0, 0.08);
-}
+    .team-card.purple {
+      background: linear-gradient(to bottom right, #faf5ff, #f3e8ff);
+    }
 
-/* Avatar (circular photo) */
-.team-avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  background: #e5e5e5;
-  flex-shrink: 0;
-}
+    .team-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      color: var(--gray-900);
+    }
 
-.team-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    .team-role {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--blue-600);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
 
-/* Text */
-.team-name {
-  font-weight: 600;
-  font-size: 1.05rem;
-  margin-bottom: 0.25rem;
-}
+    .team-description {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+    }
 
-.team-role {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #666;
-  margin-bottom: 0.75rem;
-}
+    .team-subsection-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--gray-900);
+    }
 
-.team-description {
-  font-size: 0.9rem;
-  color: #444;
-  line-height: 1.5;
-  flex: 1; /* pushes footer to bottom so all cards align */
-}
-
-/* Footer with LinkedIn icon */
-.team-footer {
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.team-linkedin {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #0077b5;
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.team-linkedin svg {
-  width: 14px;
-  height: 14px;
-  fill: #ffffff;
-  display: block;
-}
-
-.team-card:hover .team-linkedin {
-  background: #005c8a;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(0, 119, 181, 0.4);
-}
+    .team-specialists-wrapper {
+      max-width: 640px;
+      margin: 0 auto;
+    }
 
     /* ========== CONTACT SECTION ========== */
     .contact {
@@ -814,33 +772,6 @@
     .footer-link:hover {
       color: var(--blue-600);
     }
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.footer-social {
-  display: inline-flex;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #0077b5;
-  justify-content: center;
-  align-items: center;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.footer-social:hover {
-  background: #005c8a;
-  transform: translateY(-2px);
-}
-
-.footer-social svg {
-  width: 15px;
-  height: 15px;
-  fill: #ffffff;
-}
 
     /* ========== RESPONSIVE ========== */
     @media (min-width: 640px) {
@@ -977,8 +908,8 @@
         sustainable growth.
       </p>
       <div class="hero-actions">
-        <a href="#about" class="btn-primary">
-          Learn More
+        <a href="#process" class="btn-primary">
+          Start Your Journey
           <span style="display:inline-block;margin-left:0.4rem;">➜</span>
         </a>
       </div>
@@ -990,7 +921,7 @@
     <div class="container">
       <h2 class="section-title">Who We Are</h2>
       <p class="section-subtitle">
-        We are a venture studio building India-first, scalable ventures by deeply partnering with
+        We build India-first, scalable ventures by deeply partnering with
         founders, ecosystems, and operating teams.
       </p>
 
@@ -1044,28 +975,31 @@
           <div class="process-step-number">Step 01</div>
           <div class="process-step-title">Discover</div>
           <div class="process-step-short">
-            Whitespace opportunities
+            Identify whitespace opportunities rooted in India-first consumer and
+            category insights.
           </div>
         </div>
         <div class="process-step-card" data-step="2">
           <div class="process-step-number">Step 02</div>
           <div class="process-step-title">Design</div>
           <div class="process-step-short">
-            Operating blueprints
+            Shape the brand, business model, and operating blueprint with clear
+            unit economics.
           </div>
         </div>
         <div class="process-step-card" data-step="3">
           <div class="process-step-number">Step 03</div>
           <div class="process-step-title">Build</div>
           <div class="process-step-short">
-            Pilots
+            Set up teams, systems, partnerships, and pilots to prove product–market–channel fit.
           </div>
         </div>
         <div class="process-step-card" data-step="4">
           <div class="process-step-number">Step 04</div>
           <div class="process-step-title">Scale</div>
           <div class="process-step-short">
-            Sustainably
+            Double-down with playbooks, capital, and deep geographic expansion in
+            priority markets.
           </div>
         </div>
       </div>
@@ -1129,315 +1063,149 @@
   </section>
 
   <!-- ========== TEAM ========== -->
-<!-- ========== TEAM ========== -->
-<section id="team" class="team section-padding">
-  <div class="container">
-    <h2 class="section-title">The Studio Team</h2>
-    <p class="section-subtitle">
-      A cross-functional team of operators, strategists, and builders backing
-      founders from day zero.
-    </p>
+  <section id="team" class="team section-padding">
+    <div class="container">
+      <h2 class="section-title">The Studio Team</h2>
+      <p class="section-subtitle">
+        A cross-functional team of operators, strategists, and builders backing
+        founders from day zero.
+      </p>
 
-    <!-- Core team -->
-    <div class="team-grid core">
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="team-k-radhakrishnan.png" alt="K. Radhakrishnan" />
+      <!-- Core team -->
+      <div class="team-grid core">
+        <div class="team-card">
+          <div class="team-name">K. Radhakrishnan</div>
+          <div class="team-role">Co-founder</div>
+          <div class="team-description">
+            Built Reliance Fresh (0 → 1000+ stores). 40+ years of retail leadership.
+          </div>
         </div>
-        <div class="team-name">K. Radhakrishnan</div>
-        <div class="team-role">Co-founder</div>
-        <div class="team-description">
-          Built Reliance Fresh (0 → 1000+ stores). 40+ years of retail leadership.
+
+        <div class="team-card">
+          <div class="team-name">Ashim Jolly</div>
+          <div class="team-role">Co-founder</div>
+          <div class="team-description">
+            Former COO, Haptik (acquired by Reliance Jio). Venture builder & operator.
+          </div>
         </div>
-        <div class="team-footer">
-          <a
-            href="https://in.linkedin.com/in/radhakrishnan-k-69b709219"
-            class="team-linkedin"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn profile of K. Radhakrishnan"
-          >
-            <!-- LinkedIn icon -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.16h4.36V24H.32V8.16zM8.11 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V24H8.11V8.16z"
-              />
-            </svg>
-          </a>
+
+        <div class="team-card">
+          <div class="team-name">Lance Fernandes</div>
+          <div class="team-role">Operator</div>
+          <div class="team-description">
+            Experience across Procam, GS Worldwide, Jiostar, MCA.
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-name">Mayur Kulkarni</div>
+          <div class="team-role">Business Development</div>
+          <div class="team-description">
+            0-to-1 startup experience across SF & Mumbai.
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-name">Naren Rajagopal</div>
+          <div class="team-role">Ops and Legal</div>
+          <div class="team-description">
+            Works across capital strategy, partner engagement, and sales systems.
+          </div>
         </div>
       </div>
 
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="./team-ashim-jolly.png" alt="Ashim Jolly" />
+      <!-- Venture operators -->
+      <h3 class="team-subsection-title">Venture Operators</h3>
+      <div class="team-grid operators">
+        <div class="team-card green">
+          <div class="team-name">Narayan Jangid</div>
+          <div class="team-role">GreenShoots</div>
+          <div class="team-description">
+            20 years in fruits & vegetables. Former category head at Dealshare,
+            Deputy Manager at Future Group. Masters in Agriculture.
+          </div>
         </div>
-        <div class="team-name">Ashim Jolly</div>
-        <div class="team-role">Co-founder</div>
-        <div class="team-description">
-          Former COO, Haptik (acquired by Reliance Jio). Venture builder & operator.
+
+        <div class="team-card green">
+          <div class="team-name">Lokendra Rathore</div>
+          <div class="team-role">GreenShoots</div>
+          <div class="team-description">
+            Co-building GreenShoots. 5+ years in hospitality with Hyatt and Accor.
+            Co-built a 5-bedroom resort and restaurant.
+          </div>
         </div>
-        <div class="team-footer">
-          <a
-            href="https://www.linkedin.com/in/ashimjolly/"
-            class="team-linkedin"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn profile of Ashim Jolly"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.16h4.36V24H.32V8.16zM8.11 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V24H8.11V8.16z"
-              />
-            </svg>
-          </a>
+
+        <div class="team-card">
+          <div class="team-name">Uday Nayak</div>
+          <div class="team-role">JustWalkIndia</div>
+          <div class="team-description">
+            35+ years as Business Strategist & Agri-FMCG Leader. Scaled Adani
+            Wilmar, Reliance Retail, Tilda Riceland to multi-crore success.
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-name">DJ Dilip Jayaram</div>
+          <div class="team-role">JustWalkIndia</div>
+          <div class="team-description">
+            Former CEO, Procam International. Scaled 4 Gold Label Running events
+            to $200M industry. 3+ decades in sports & media.
+          </div>
         </div>
       </div>
 
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="./team-lance-fernandes.png" alt="Lance Fernandes" />
-        </div>
-        <div class="team-name">Lance Fernandes</div>
-        <div class="team-role">Operations</div>
-        <div class="team-description">
-          Experience across Procam, GS Worldwide, Jiostar, MCA.
-        </div>
-        <div class="team-footer">
-          <a
-            href="https://www.linkedin.com/in/lancefernandes01/"
-            class="team-linkedin"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn profile of Lance Fernandes"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.16h4.36V24H.32V8.16zM8.11 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V24H8.11V8.16z"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="./team-mayur-kulkarni.jfif" alt="Mayur Kulkarni" />
-        </div>
-        <div class="team-name">Mayur Kulkarni</div>
-        <div class="team-role">Business Development</div>
-        <div class="team-description">
-         0-to-1 startup builder across San Francisco and Mumbai.
-        </div>
-        <div class="team-footer">
-          <a
-            href="https://www.linkedin.com/in/mayurkulkarni028/"
-            class="team-linkedin"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn profile of Mayur Kulkarni"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.16h4.36V24H.32V8.16zM8.11 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V24H8.11V8.16z"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="./team-naren-rajagopal.png" alt="Naren Rajagopal" />
-        </div>
-        <div class="team-name">Naren Rajagopal</div>
-        <div class="team-role">Operations and Legal</div>
-        <div class="team-description">
-          Works across capital strategy, partner engagement, and sales systems.
-        </div>
-        <div class="team-footer">
-          <a
-            href="https://www.linkedin.com/in/narenrajagopal/"
-            class="team-linkedin"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn profile of Naren Rajagopal"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.16h4.36V24H.32V8.16zM8.11 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V24H8.11V8.16z"
-              />
-            </svg>
-          </a>
+      <!-- Specialists -->
+      <h3 class="team-subsection-title">Specialists</h3>
+      <div class="team-grid team-specialists-wrapper">
+        <div class="team-card purple">
+          <div class="team-name">Krittika Saha</div>
+          <div class="team-role">Advisor — Fundraising & Governance</div>
+          <div class="team-description">
+            Supports early-stage companies with capital readiness and financial
+            governance.
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Venture operators -->
-    <h3 class="team-subsection-title">Venture Operators</h3>
-    <div class="team-grid operators">
-      <div class="team-card green">
-        <div class="team-avatar">
-          <img src="./team-narayan-jangid.png" alt="Narayan Jangid" />
-        </div>
-        <div class="team-name">Narayan Jangid</div>
-        <div class="team-role">GreenShoots</div>
-        <div class="team-description">
-          20 years in fruits & vegetables. Former category head at Dealshare,
-          Deputy Manager at Future Group. Masters in Agriculture.
-        </div>
-        <div class="team-footer">
-          <a
-            href="https://www.linkedin.com/in/narayan-jangid-294a5531/"
-            class="team-linkedin"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn profile of Narayan Jangid"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.16h4.36V24H.32V8.16zM8.11 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V24H8.11V8.16z"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="team-card green">
-        <div class="team-avatar">
-          <img src="./team-lokendra-rathore.png" alt="Lokendra Rathore" />
-        </div>
-        <div class="team-name">Lokendra Rathore</div>
-        <div class="team-role">GreenShoots</div>
-        <div class="team-description">
-          Co-building GreenShoots. 5+ years in hospitality with Hyatt and Accor.
-          Co-built a 5-bedroom resort and restaurant.
-        </div>
-        <div class="team-footer">
-          <a
-            href="https://www.linkedin.com/in/lokendra-rathore-2bbb94189/"
-            class="team-linkedin"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn profile of Lokendra Rathore"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.16h4.36V24H.32V8.16zM8.11 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V24H8.11V8.16z"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="./team-mahesh-ranka.jfif" alt="Mahesh Ranka" />
-        </div>
-        <div class="team-name">Mahesh Ranka</div>
-        <div class="team-role">#JustWalkIndia</div>
-        <div class="team-description">
-          30+ years in sports, media, and marketing. Builds scalable sports IPs
-          at GameChangerZ with deep experience across IMG Reliance, CricInfo,
-          and Publicis Groupe.
-        </div>
-        <div class="team-footer">
-          <a
-            href="https://www.linkedin.com/in/maheshranka/"
-            class="team-linkedin"team-mahesh-ranka
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn profile of Mahesh Ranka"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.16h4.36V24H.32V8.16zM8.11 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V24H8.11V8.16z"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar">
-          <img src="./team-dj-dilip-jayaram.png" alt="DJ Dilip Jayaram" />
-        </div>
-        <div class="team-name">DJ Dilip Jayaram</div>
-        <div class="team-role">#JustWalkIndia</div>
-        <div class="team-description">
-          Former CEO, Procam International. Scaled 4 Gold Label Running events
-          to $200M industry. 3+ decades in sports & media.
-        </div>
-        <div class="team-footer">
-          <a
-            href="https://www.linkedin.com/in/dj-dilip-jayaram/"
-            class="team-linkedin"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn profile of DJ Dilip Jayaram"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.16h4.36V24H.32V8.16zM8.11 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V24H8.11V8.16z"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-</section>
-
-
+  </section>
 
   <!-- ========== PORTFOLIO ========== -->
   <section id="portfolio" class="portfolio section-padding">
-  <div class="container">
-    <h2 class="section-title">Our Portfolio</h2>
-    <p class="section-subtitle">
-      A glimpse into the ventures we're nurturing under the IBEC India studio.
-    </p>
+    <div class="container">
+      <h2 class="section-title">Our Portfolio</h2>
+      <p class="section-subtitle">
+        A glimpse into the ventures we're nurturing under the IBEC India studio.
+      </p>
 
-    <div class="portfolio-grid">
-      <div class="portfolio-card green">
-        <div class="portfolio-category">Agritech</div>
-        <div class="portfolio-name">GreenShoots</div>
-        <div class="portfolio-description">
-          An integrated venture creating structured, scalable value chains across
-          key categories—starting with bananas—to unlock better incomes for
-          farmers and fresher produce for consumers.
+      <div class="portfolio-grid">
+        <div class="portfolio-card green">
+          <div class="portfolio-category">Agritech · Value Chains</div>
+          <div class="portfolio-name">GreenShoots</div>
+          <div class="portfolio-description">
+            An integrated venture creating structured, scalable value chains across
+            key categories—starting with bananas—to unlock better incomes for
+            farmers and fresher produce for consumers.
+          </div>
+          <div class="portfolio-learn">
+            Learn more <span>➜</span>
+          </div>
         </div>
-        <a 
-          href="https://leafy-starts.preview.emergentagent.com/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="portfolio-learn"
-        >
-          Learn more <span>➜</span>
-        </a>
-      </div>
 
-      <div class="portfolio-card blue">
-        <div class="portfolio-category">Health · Community</div>
-        <div class="portfolio-name">#JustWalkIndia</div>
-        <div class="portfolio-description">
-          India's largest walking movement—building healthier communities through
-          walking, neighborhood clubs, and large-format walkathons across the
-          country.
+        <div class="portfolio-card blue">
+          <div class="portfolio-category">Health · Community</div>
+          <div class="portfolio-name">JustWalkIndia</div>
+          <div class="portfolio-description">
+            India's largest walking movement—building healthier communities through
+            walking, neighborhood clubs, and large-format walkathons across the
+            country.
+          </div>
+          <div class="portfolio-learn">
+            Learn more <span>➜</span>
+          </div>
         </div>
-        <a 
-          href="https://www.justwalkindia.com/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="portfolio-learn"
-        >
-          Learn more <span>➜</span>
-        </a>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- ========== CONTACT ========== -->
   <section id="contact" class="contact section-padding">
@@ -1462,32 +1230,16 @@
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-logo gradient-text">IBEC India</div>
-    <div class="footer-text">Building India-first ventures that scale.</div>
-
-    <div class="footer-links">
-      <a href="mailto:hello@ibecindia.in" class="footer-link">Contact</a>
-      <a href="#about" class="footer-link">About</a>
-      <a href="#portfolio" class="footer-link">Portfolio</a>
-
-      <a
-        href="https://www.linkedin.com/company/ibecconsulting"
-        class="footer-social"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="IBEC LinkedIn Page"
-      >
-        <!-- LinkedIn icon -->
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.16h4.36V24H.32V8.16zM8.11 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V24H8.11V8.16z"
-          />
-        </svg>
-      </a>
+    <div class="footer-inner">
+      <div class="footer-logo gradient-text">IBEC India</div>
+      <div class="footer-text">Building India-first ventures that scale.</div>
+      <div class="footer-links">
+        <a href="mailto:hello@ibecindia.in" class="footer-link">Contact</a>
+        <a href="#about" class="footer-link">About</a>
+        <a href="#portfolio" class="footer-link">Portfolio</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
   <!-- ========== JS: MOBILE MENU & PROCESS TABS ========== -->
   <script>

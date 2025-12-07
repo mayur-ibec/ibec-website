@@ -629,6 +629,108 @@
       display: block;
     }
 
+    /* new process */
+
+
+.process-flow {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+/* Step block */
+.process-step {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+
+.process-step[open] {
+  border-color: #4f46e5;
+}
+
+/* Remove native marker */
+.process-step > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.process-step > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Step header content */
+.process-step-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.process-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: #111827;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.process-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.process-short {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Expandable content */
+.process-body {
+  padding: 0.75rem 1.25rem 1rem 1.25rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+/* Connector arrows */
+.process-connector {
+  font-size: 1.3rem;
+  color: #9ca3af;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+.process-connector::before,
+.process-connector::after {
+  content: "";
+  display: inline-block;
+  width: 32%;
+  height: 2px;
+  background: #e5e7eb;
+  vertical-align: middle;
+}
+
+.process-connector span {
+  padding: 0 0.4rem;
+}
+
+
+
     /* ========== TEAM SECTION ========== */
    .team-grid {
   display: grid;
@@ -1032,101 +1134,86 @@
   </section>
 
   <!-- ========== PROCESS ========== -->
-  <section id="process" class="process section-padding">
-    <div class="container">
-      <h2 class="section-title">How We Work</h2>
-      <p class="section-subtitle">
-        A hands-on, end-to-end venture-building model—from insight to scale.
-      </p>
+ <section id="process" class="process section-padding">
+  <div class="container">
+    <h2 class="section-title">How We Work</h2>
+    <p class="section-subtitle">A simple, repeatable system from insight to scale.</p>
 
-      <div class="process-grid" id="processSteps">
-        <div class="process-step-card active" data-step="1">
-          <div class="process-step-number">Step 01</div>
-          <div class="process-step-title">Discover</div>
-          <div class="process-step-short">
-            Whitespace opportunities
+    <div class="process-flow">
+     
+      <!-- Step 1 -->
+      <details class="process-step" open>
+        <summary>
+          <div class="process-step-header">
+            <div class="process-badge">01</div>
+            <div>
+              <div class="process-title">Discover</div>
+              <div class="process-short">Identify whitespace opportunities</div>
+            </div>
           </div>
+        </summary>
+        <div class="process-body">
+          Research + on-ground insights to validate real problems worth solving.
         </div>
-        <div class="process-step-card" data-step="2">
-          <div class="process-step-number">Step 02</div>
-          <div class="process-step-title">Design</div>
-          <div class="process-step-short">
-            Operating blueprints
-          </div>
-        </div>
-        <div class="process-step-card" data-step="3">
-          <div class="process-step-number">Step 03</div>
-          <div class="process-step-title">Build</div>
-          <div class="process-step-short">
-            Pilots
-          </div>
-        </div>
-        <div class="process-step-card" data-step="4">
-          <div class="process-step-number">Step 04</div>
-          <div class="process-step-title">Scale</div>
-          <div class="process-step-short">
-            Sustainably
-          </div>
-        </div>
-      </div>
+      </details>
 
-      <div class="process-detail">
-        <!-- Detail panels -->
-        <div class="process-detail-panel active" data-step-detail="1">
-          <div class="process-detail-header">
-            <div class="process-detail-number">01</div>
-            <div class="process-detail-title">Discover</div>
-          </div>
-          <p class="process-detail-text">
-            We conduct deep market research, consumer insights analysis, and
-            competitive landscape mapping to identify untapped opportunities in
-            retail, FMCG, and agri sectors. Our discovery phase combines
-            data-driven analysis with on-ground validation to ensure we're
-            solving real problems.
-          </p>
-        </div>
+      <div class="process-connector">↓</div>
 
-        <div class="process-detail-panel" data-step-detail="2">
-          <div class="process-detail-header">
-            <div class="process-detail-number">02</div>
-            <div class="process-detail-title">Design</div>
+      <!-- Step 2 -->
+      <details class="process-step">
+        <summary>
+          <div class="process-step-header">
+            <div class="process-badge">02</div>
+            <div>
+              <div class="process-title">Design</div>
+              <div class="process-short">Blueprint the venture</div>
+            </div>
           </div>
-          <p class="process-detail-text">
-            We craft the complete business architecture including brand
-            positioning, revenue models, operational workflows, and financial
-            projections. Every design element is stress-tested for viability,
-            scalability, and profitability before moving forward.
-          </p>
+        </summary>
+        <div class="process-body">
+          Define brand, economics, and execution strategy before capital deployment.
         </div>
+      </details>
 
-        <div class="process-detail-panel" data-step-detail="3">
-          <div class="process-detail-header">
-            <div class="process-detail-number">03</div>
-            <div class="process-detail-title">Build</div>
-          </div>
-          <p class="process-detail-text">
-            We assemble the right team, implement technology systems, forge
-            strategic partnerships, and launch pilot programs. This phase focuses
-            on rapid experimentation and learning to validate our hypotheses and
-            refine the offering based on real market feedback.
-          </p>
-        </div>
+      <div class="process-connector">↓</div>
 
-        <div class="process-detail-panel" data-step-detail="4">
-          <div class="process-detail-header">
-            <div class="process-detail-number">04</div>
-            <div class="process-detail-title">Scale</div>
+      <!-- Step 3 -->
+      <details class="process-step">
+        <summary>
+          <div class="process-step-header">
+            <div class="process-badge">03</div>
+            <div>
+              <div class="process-title">Build</div>
+              <div class="process-short">Pilot and validate</div>
+            </div>
           </div>
-          <p class="process-detail-text">
-            With proven product-market fit, we systematically scale operations
-            through documented playbooks, strategic capital deployment, and
-            targeted geographic expansion. We focus on sustainable growth while
-            maintaining operational excellence and unit economics.
-          </p>
+        </summary>
+        <div class="process-body">
+          Run controlled pilots, refine based on real customer + market feedback.
         </div>
-      </div>
+      </details>
+
+      <div class="process-connector">↓</div>
+
+      <!-- Step 4 -->
+      <details class="process-step">
+        <summary>
+          <div class="process-step-header">
+            <div class="process-badge">04</div>
+            <div>
+              <div class="process-title">Scale</div>
+              <div class="process-short">Grow with discipline</div>
+            </div>
+          </div>
+        </summary>
+        <div class="process-body">
+          Expand through capital, partnerships, and documented playbooks.
+        </div>
+      </details>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ========== TEAM ========== -->
 <!-- ========== TEAM ========== -->
